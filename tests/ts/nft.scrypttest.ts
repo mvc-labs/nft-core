@@ -1,4 +1,4 @@
-import { mvc } from 'mvc-scryptlib';
+import { mvc } from 'mvc-scrypt';
 import NftProto = require('../../deployments/nftProto');
 
 import { initContractHash, transferNft, createNftGenesisContract, unlockNftFromContract, genesisTxId, genesisOutputIndex, defaultSensibleID as sensibleID, sellNftForToken } from "./nftUtils"

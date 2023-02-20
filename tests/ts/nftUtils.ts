@@ -12,7 +12,7 @@ import {
     Bytes,
     Ripemd160,
     buildTypeClasses,
-} from 'mvc-scryptlib'
+} from 'mvc-scrypt'
 import { inputSatoshis, dummyTxId } from '../../scrypt_helper';
 
 import { privateKey, privateKey2 } from '../../privateKey';
@@ -42,10 +42,9 @@ const UnlockContractCheck = genContract('nft/nftUnlockContractCheck', USE_DESC, 
 const NftSell = genContract('nft/nftSell', USE_DESC, USE_RELEASE)
 const NftSellForToken = genContract('nft/nftSellForToken', USE_DESC, USE_RELEASE)
 const TokenBuyForNft = genContract('nft/tokenBuyForNft', USE_DESC, USE_RELEASE)
-const Token = genContract('token/token', false, false)
-const TxUtil = genContract('txUtil', false, false)
+const Token = genContract('token/token', true, false)
 
-const jsonDescr = Common.loadDescription('./fixture/autoGen/txUtil_desc.json');
+const jsonDescr = Common.loadDescription('./fixture/autoGen/nft_desc.json');
 const { TxInputProof, TxOutputProof } = buildTypeClasses(jsonDescr);
 
 const addInput = Common.addInput

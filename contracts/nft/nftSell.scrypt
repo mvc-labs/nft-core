@@ -2,7 +2,7 @@ import "nftProto.scrypt";
 
 contract NftSell {
     Ripemd160 senderAddress;
-    int bsvRecAmount;
+    int mvcRecAmount;
     bytes nftCodeHash;
     bytes nftID;
 
@@ -20,7 +20,7 @@ contract NftSell {
         bytes outputs = b'';
         if (op == 1) {
             bytes outputScript = Utils.buildPublicKeyHashScript(this.senderAddress);
-            outputs = Utils.buildOutput(outputScript, this.bsvRecAmount);
+            outputs = Utils.buildOutput(outputScript, this.mvcRecAmount);
         }
         else {
             // check sig

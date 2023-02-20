@@ -23,7 +23,7 @@ contract Nft {
     * @param receiverAddress {bytes} the receiverAddress, only transfer need
     * @param nftOutputSatoshis {int} the nft output contract satoshis, only transfer need
     * @param opReturnScript {bytes} op_false op_return script, optional, only transfer need
-    * @param changeAddress {Ripemd160} change bsv address, only transfer need
+    * @param changeAddress {Ripemd160} change mvc address, only transfer need
     * @param checkInputIndex {int} nftUnlockContractCheck contract input index, only unlockFromContract need
     * @param checkScriptTx {bytes} nftUnlockContractCheck contract raw tx, only unlockFromContract need
     * @param lockContractInputIndex {int} lock contract input index, only unlockFromContract need
@@ -105,7 +105,7 @@ contract Nft {
                 opReturnOutput = Utils.buildOutput(opReturnScript, 0);
             }
 
-            bytes changeOutput = TxUtil.genBsvOutput(changeSatoshis, changeAddress);
+            bytes changeOutput = TxUtil.genMvcOutput(changeSatoshis, changeAddress);
 
             bytes outputs = nftOutput + opReturnOutput + changeOutput;
             bytes hashOutputs = hash256(outputs);
