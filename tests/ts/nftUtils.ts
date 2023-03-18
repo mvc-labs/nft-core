@@ -42,10 +42,9 @@ const UnlockContractCheck = genContract('nft/nftUnlockContractCheck', USE_DESC, 
 const NftSell = genContract('nft/nftSell', USE_DESC, USE_RELEASE)
 const NftSellForToken = genContract('nft/nftSellForToken', USE_DESC, USE_RELEASE)
 const TokenBuyForNft = genContract('nft/tokenBuyForNft', USE_DESC, USE_RELEASE)
-const Token = genContract('token/token', true, false)
+const Token = genContract('token/token', USE_DESC, USE_RELEASE)
 
-const jsonDescr = Common.loadDescription('./fixture/autoGen/nft_desc.json');
-const { TxInputProof, TxOutputProof } = buildTypeClasses(jsonDescr);
+const { TxInputProof, TxOutputProof } = buildTypeClasses(Token);
 
 const addInput = Common.addInput
 
