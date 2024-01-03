@@ -76,7 +76,7 @@ contract Nft {
         // verify tx and prevTx script
         Backtrace.verify(thisOutpoint, nftTxHeader, prevNftInputIndex, prevNftTxProof, sensibleID, nftTxInputProof);
 
-        if (sensibleID[: 32] != hash256(prevNftTxProof.txHeader)) {
+        if (sensibleID != hash256(prevNftTxProof.txHeader) + nftTxInputProof.outputIndexBytes) {
             // backtrace to nft contract
             // verify prev nft script data and script code
             bytes prevNftScript = NftProto.getNewNftScript(nftScript, nftScriptLen, prevNftAddress);
